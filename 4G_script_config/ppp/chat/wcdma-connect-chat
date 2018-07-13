@@ -1,0 +1,15 @@
+# /etc/ppp/peers/quectel-chat-connect
+ABORT "DELAYED"
+ABORT "BUSY"
+ABORT "NO CARRIER"
+ABORT "NO DIALTONE"
+ABORT "ERROR"
+ABORT "NO ANSWER"
+TIMEOUT 30
+"" AT
+OK ATE0
+OK ATI;+CSQ;+CPIN?;+COPS?;+CGREG?;&D2
+# Insert the APN provided by your network operator, default apn is 3gnet
+OK 'AT+CGDCONT=1,"IP","CMNET"'
+OK ATD*99#
+CONNECT
